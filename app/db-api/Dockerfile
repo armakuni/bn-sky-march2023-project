@@ -1,6 +1,6 @@
 FROM python:3.11
 
-ADD src/* .
+ADD src/* ./
 
 RUN pip install pipenv
 RUN pipenv install
