@@ -26,6 +26,12 @@ I only want customers to be able to add available items to their cart
 So that customers don't check out when there's no stock left to buy
 ```
 
+```
+As an SRE
+I want to view a dashboard showing the state of the system
+So that I can quickly diagnose problems if something goes wrong
+```
+
 ### Technical requirements
 1. Build this on AWS
 1. It should use an AWS MySQL-compatible database
