@@ -1,5 +1,7 @@
 # Building our own shop
 
+[![DB-API](https://github.com/armakuni/bn-sky-march2023-project/actions/workflows/db-api.yml/badge.svg)](https://github.com/armakuni/bn-sky-march2023-project/actions/workflows/db-api.yml)
+
 ### Project vision
 Our own shop letting customers browse a catalog of amazing items and select them to purchase.
 
