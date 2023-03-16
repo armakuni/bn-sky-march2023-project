@@ -93,7 +93,7 @@ jobs:
         ECR_REPOSITORY: test
         IMAGE_TAG: DBAPI_latest
       with:
-        args: apply -f ./app-deployment.yaml
+        args: apply -f ./app/db-api/app-deployment.yaml
 
     - name: Update the deployment with latest
       uses: kodermax/kubectl-aws-eks@master
