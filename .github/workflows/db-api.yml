@@ -85,8 +85,10 @@ jobs:
     - name: Deploy application
       uses: ianbelcher/eks-kubectl-action@master
       with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+
         cluster_name: test
-        args: apply -f ./app-deployment
+        args: apply -f ./app-deployment.yaml
 
     - name: Update the deployment with latest
       uses: ianbelcher/eks-kubectl-action@master
