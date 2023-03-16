@@ -2,7 +2,7 @@ import os
 import requests
 
 from typing import List
-from flask import Flask, request, response, jsonify, make_response
+from flask import Flask, request, jsonify, make_response
 
 from util import ShopItem, calculate_cart_total
 
@@ -74,6 +74,11 @@ def post_cart():
         return make_response(jsonify(response_data), 404)
 
 
+@app.route("/", methods=["GET"])
+def get_index():
+    return f"<h1> Hello World </h1><br/><p>Your Database URL is: {db_api_url}</p>"
+
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    print("APP IS WORKING...")
+    app.run(host="0.0.0.0", port=8000)
