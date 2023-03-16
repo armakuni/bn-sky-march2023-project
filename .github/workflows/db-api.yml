@@ -32,5 +32,7 @@ jobs:
         pipenv install
 
     - name: Test with pytest
+      working-directory: ./app/db-api
       run: |
+        pipenv shell
         pytest
