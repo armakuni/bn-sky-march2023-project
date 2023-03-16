@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: db-api
+  name: db-api
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: db-api
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '5000'
+      labels:
+        app: db-api
+    spec:
+      containers:
+      - image: 490586798761.dkr.ecr.us-east-2.amazonaws.com/ecommerce:DBAPI_latest
+        imagePullPolicy: Always
+        name: db-api
+        env:
+        - name: ec_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: db-api
+              key: username
+        - name: ec_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-api
+              key: password
+        - name: ec_DATABASE
+          value: ecommerce
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-api-service-external
+spec:
+  ports:
+  - port: 80
+    targetPort: 5000
+  selector:
+    app: db-api
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-api-service
+spec:
+  ports:
+  - port: 80
+    targetPort: 5000
+  selector:
+    app: db-api
+  type: ClusterIP
