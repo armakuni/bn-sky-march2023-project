@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  checkout_api:
+    container_name: 'checkout_api'
+    build: './checkout_api'
+    environment:
+      - DB_URL=ECOMMERCE-DB-URL
+    ports:
+      - '8000:8000'
