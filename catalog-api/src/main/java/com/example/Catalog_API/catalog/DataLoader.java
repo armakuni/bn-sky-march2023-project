@@ -16,16 +16,16 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-    Product yoyo = new Product( "Yoyo", 25);
-    Product kazoo = new Product( "Kazoo", 20);
-    Product glockenspiel = new Product( "Glockenspiel", 10);
-    Product banjo = new Product( "Banjo", 15);
-    Product chair = new Product( "Herman Miller", 30);
-    Product painting = new Product( "Monet Print", 500);
-    Product toy = new Product( "Newtons Cradle", 250);
-    Product gadget = new Product( "Plasma Lamp" , 25);
-    Product kitchenAppliance = new Product( "Air Fryer", 1000);
-    Product shoes = new Product( "Converse", 60);
+    Product yoyo = new Product( "Yoyo", 2 ,25);
+    Product kazoo = new Product( "Kazoo", 3, 20);
+    Product glockenspiel = new Product( "Glockenspiel", 25, 10);
+    Product banjo = new Product( "Banjo", 23, 15);
+    Product chair = new Product( "Herman Miller", 400, 30);
+    Product painting = new Product( "Monet Print", 40, 500);
+    Product toy = new Product( "Newtons Cradle", 15, 250);
+    Product gadget = new Product( "Plasma Lamp" , 18, 25);
+    Product kitchenAppliance = new Product( "Air Fryer", 180, 1000);
+    Product shoes = new Product( "Converse", 90, 60);
 
     productRepository.save(yoyo);
     productRepository.save(kazoo);

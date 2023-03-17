@@ -12,6 +12,9 @@ public class Product {
     @Column(name = "productName")
     private String productName;
 
+    @Column(name = "price")
+    private int price;
+    
     @Column(name = "quantity")
     private int quantity;
   
@@ -19,8 +22,9 @@ public class Product {
     private String imageurl;
 
     //Constructor
-    public Product(String productName, int quantity) {
+    public Product(String productName,int price, int quantity) {
         this.productName = productName;
+        this.price = price;
         this.quantity = quantity;
         this.imageurl = new String();
     }
