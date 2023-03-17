@@ -3,10 +3,7 @@ import requests
 
 from typing import List
 from flask import Flask, request, jsonify, make_response
-<<<<<<< HEAD
 
-=======
->>>>>>> 9535a55 (fix: port conflix, added compose file for docker)
 
 from util import ShopItem, calculate_cart_total
 
