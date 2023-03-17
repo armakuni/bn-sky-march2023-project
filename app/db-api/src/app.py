@@ -18,5 +18,14 @@ def products():
     return productRoutes.products()
 
 
+@app.route("/products/<id>")
+def product(id):
+    found = productRoutes.product(id)
+    if found == None:
+        return "", 404
+    else:
+        return found, 200
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

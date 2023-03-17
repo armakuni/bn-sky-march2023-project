@@ -18,6 +18,26 @@ class ProductRoutes:
     def __init__(self, db):
         self.db = db
 
+    def product(self, requestedId):
+        with closing(self.db.readConnection()) as cnx:
+            with closing(cnx.cursor()) as cursor:
+                print(requestedId, int(requestedId), type(int(requestedId)))
+                cursor.execute(
+                    "SELECT id, name, price, quantity, imageurl FROM products WHERE id=%(id)s",
+                    {"id": int(requestedId)},
+                )
+                for id, name, price, quantity, imageurl in cursor:
+                    if id == int(requestedId):
+                        return {
+                            "id": int(id),
+                            "name": name,
+                            "price": float(price),
+                            "quantity": quantity,
+                            "imageurl": imageurl,
+                        }
+                # no rows match
+                return None
+
     def products(self):
         with closing(self.db.readConnection()) as cnx:
             with closing(cnx.cursor()) as cursor:

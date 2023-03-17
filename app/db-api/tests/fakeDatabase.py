@@ -2,7 +2,7 @@ class FakeDBCursor(list):
     def __init__(self, results):
         super().__init__(results)
 
-    def execute(self, sql):
+    def execute(self, sql=None, params=None):
         pass
 
     def close(self):
