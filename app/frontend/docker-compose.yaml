@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  app:
+    container_name: app-prod
+    build:
+      context: .
+      # target: production
+    ports:
+      - 3000:3000
+      - 3030:3030
+      - 80:80
