@@ -1,12 +1,10 @@
 version: "3"
 
 services:
-  app:
-    container_name: app-prod
+  frontend:
+    container_name: frontend
     build:
       context: .
       # target: production
     ports:
-      - 3000:3000
-      - 3030:3030
       - 80:80
