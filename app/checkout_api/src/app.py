@@ -4,6 +4,7 @@ import requests
 from typing import List
 from flask import Flask, request, jsonify, make_response
 
+
 from util import ShopItem, calculate_cart_total
 
 
