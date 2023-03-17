@@ -1,0 +1,23 @@
+export const products =
+[
+    {
+        name:"book",
+        price:10.99,
+        quantity:20,
+    },
+    {
+        name:"t-shirt",
+        price:12.99,
+        quantity:20,
+    },
+    {
+        name:"pen",
+        price:1.99,
+        quantity:20,
+    },
+    {
+        name:"headphones",
+        price:49.99,
+        quantity:20,
+    }
+]
